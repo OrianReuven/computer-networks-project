@@ -8,7 +8,7 @@ By **Oriya Peretz** and **Orian Reuven**.
 ### Part 1: Packet encapsulation and capture
 - `notebooks/csv_creator.ipynb` generates a CSV of simulated HTTP application-layer messages (browser ↔ web server).
 - `data/group03_http_input.csv` is the generated input.
-- `notebooks/traffic_simulator.ipynb` sends the messages over TCP so they can be captured and analyzed in Wireshark.
+- `notebooks/traffic_simulator.ipynb` reads the CSV with Pandas, crafts IPv4/TCP packets carrying the HTTP messages with Scapy, and sends them so they can be captured and analyzed in Wireshark.
 - `captures/capture1_loopback_simulation.pcapng` is the loopback capture of the simulation.
 
 ### Part 2: TCP chat server
@@ -32,5 +32,9 @@ Captures:
 - `docs/project_report.pdf` – full project report (Hebrew)
 - `docs/data_structure_definition.pdf` – server data-structure definition (Hebrew)
 
-## Tools
-Python (`socket`, `threading`), Jupyter, Wireshark.
+## Tech stack
+- Python 3: `socket`, `threading`
+- Scapy: packet crafting and TCP/IP encapsulation (IPv4, TCP, HTTP)
+- Pandas: reading the CSV traffic scenario
+- Jupyter
+- Wireshark: capture and analysis (`.pcapng`)
